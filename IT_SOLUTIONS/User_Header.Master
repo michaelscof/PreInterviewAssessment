@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User_Header.master.cs" Inherits="IT_SOLUTIONS.User_Header" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />  
+    <script type = "text/javascript" >
+        
+     </script>
+    <asp:ContentPlaceHolder ID="Linking" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/itsoln.css" rel="stylesheet" />
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <div class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </div>
+                <asp:linkbutton cssclass="navbar-brand" runat="server" id="linkLogo" onclick="linkLogo_Click"><i class="glyphicon glyphicon-education"></i>IT Solutions</asp:linkbutton>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <asp:LinkButton ID="LbtnProfile" runat="server" CausesValidation="false" 
+                            onclick="LbtnProfile_Click"><i class="glyphicon glyphicon-user"></i><asp:Label runat="server" Text="Profile" ID="lblProfile"></asp:Label></asp:LinkButton>
+                    </li>
+                    <li>
+                        <asp:LinkButton ID="LbtnSignOut" runat="server" CausesValidation="false" 
+                            onclick="LbtnSignOut_Click" OnClientClick="function preventBack() {"><i class="glyphicon glyphicon-off"></i>
+                            <asp:Label runat="server" Text="Log Out" ID="lblSignOut"></asp:Label></asp:LinkButton>
+                    </li>
+           </div>
+          </nav>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolderHeader" runat="server">
+ 
+        </asp:ContentPlaceHolder>
+        <hr width="100%">
+        <div class="col-lg-12">
+        <div class="col-lg-2"></div>
+            <div class="col-lg-2">
+                <h1>My Profile</h1>
+              <li><asp:LinkButton runat="server" ID="lbtnVProfile" Text="View Profile" 
+                    onclick="lbtnVProfile_Click"></asp:LinkButton></li>
+            </div>
+            <div class="col-lg-2">
+            <h1>Learning</h1>
+            <li><asp:HyperLink runat="server" ID="linkTest" Text="Take Test" 
+                    NavigateUrl="~/TestSelection.aspx"></asp:HyperLink></li>
+            <li><asp:HyperLink runat="server" ID="linkChallenge" Text="Open Challenge" NavigateUrl="~/Challenges.aspx"></asp:HyperLink></li>
+            </div>
+            <div class="col-lg-2">
+            <h1>Community</h1>
+            <li><asp:HyperLink runat="server" ID="linkHome" Text="Home" NavigateUrl="~/User_Home.aspx"></asp:HyperLink></li>
+            </div>
+            <div class="col-lg-2">
+            <h1>Surveys</h1>
+            <li><asp:HyperLink runat="server" ID="surveys" Text="Surveys" 
+                    NavigateUrl="~/survey_dashboard.aspx"></asp:HyperLink></li>
+            </div>
+            <div class="col-lg-2"></div>
+            </div>
+            <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <br />
+                    <br />
+                    <p align="center" style="font-weight:300;font-size:18px">Copyright &copy; IT Solutions,2016</p>
+                </div>
+            </div>
+            <asp:Label ID="lblUser" runat="server" Visible="false"></asp:Label>
+        </footer>
+    </form>
+</body>
+</html>
